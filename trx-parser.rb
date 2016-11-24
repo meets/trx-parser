@@ -46,7 +46,7 @@ File.open('./tmp/test.trx') do |file|
       properties.each { |prop|
         key = prop.get_elements("Key")[0].get_text
         value = prop.get_elements("Value")[0].get_text
-        next if key == "__Internal_AsyncTypeName__"
+        next if key == "__Internal_AsyncTypeName__" || key == "__Internal_DeclaringClassName__"
         item.category = "#{key} [#{value}]"
       }
     end
